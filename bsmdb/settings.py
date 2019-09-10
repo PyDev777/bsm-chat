@@ -25,25 +25,21 @@ SECRET_KEY = 'pzztkf_r+u$^*7#s(jhcw0+$%k=*#nb_vz#4i98g7f83scaj=!'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
-
-# ASGI_APPLICATION should be set to your outermost router
-ASGI_APPLICATION = "bsmdb.routing.application"
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
 
 INSTALLED_APPS = [
-    'channels',
-    'chat',
-
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'channels',
+    'chat',
 ]
 
 MIDDLEWARE = [
@@ -57,6 +53,10 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'bsmdb.urls'
+
+# ASGI_APPLICATION should be set to your outermost router
+ASGI_APPLICATION = "bsmdb.routing.application"
+
 
 TEMPLATES = [
     {
@@ -74,7 +74,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'bsmdb.wsgi.application'
+# WSGI_APPLICATION = 'bsmdb.wsgi.application'
 
 
 # Database
